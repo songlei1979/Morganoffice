@@ -1,1 +1,1 @@
-web: gunicorn kioskmodelfirst.wsgi
+web: gunicorn Morganoffice.wsgi
