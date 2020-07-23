@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'Morganoffice.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'u5bkle51owjf9iii',
+        'USER': 'brfvcr1375vkiky5',
+        'PASSWORD': 'n00az1ku3adyr0aa',
+        'HOST': 'mkorvuw3sl6cu9ms.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
