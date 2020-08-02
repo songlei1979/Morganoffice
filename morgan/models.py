@@ -31,5 +31,11 @@ class Employee(models.Model):
 
 class Assignment(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, to_field='employee_id', null=True)
-    employee = models.ForeignKey(Project, on_delete=models.CASCADE, to_field='project_id', null=True)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, to_field='project_id', null=True)
     hours = models.IntegerField(validators=[MaxValueValidator(150), MinValueValidator(1)], null=False, blank=False)
+
+    class Meta:
+        managed = False
+        db_table = 'morgan_assignment'
+        unique_together = (('employee_id',
+                            'project_id'),)
