@@ -3,7 +3,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 class Project(models.Model):
-    project_id = models.IntegerField(unique=True, validators=[MaxValueValidator(9999), MinValueValidator(1)], primary_key=True)
+    project_id = models.AutoField(primary_key=True, validators=[MaxValueValidator(9999), MinValueValidator(1)])
+    # project_id = models.IntegerField(unique=True, validators=[MaxValueValidator(9999), MinValueValidator(1)], primary_key=True)
     name = models.CharField(max_length=25, null=False, blank=False)
     budget = models.FloatField(max_length=8, null=False, blank=False)
     start_date = models.DateField(null=False, blank=False)
@@ -16,12 +17,14 @@ class Project(models.Model):
     notes = models.CharField(max_length=100, null=True, blank=True)
 
 class Department(models.Model):
-    department_id = models.IntegerField(unique=True, validators=[MaxValueValidator(99), MinValueValidator(1)], primary_key=True)
+    department_id = models.AutoField(primary_key=True, validators=[MaxValueValidator(99), MinValueValidator(1)])
+        # models.IntegerField(unique=True, validators=[MaxValueValidator(99), MinValueValidator(1)], primary_key=True)
     name = models.CharField(max_length=30, null=False, blank=False)
     location = models.CharField(max_length=30, null=False, blank=False)
 
 class Employee(models.Model):
-    employee_id = models.IntegerField(unique=True, validators=[MaxValueValidator(999), MinValueValidator(1)], primary_key=True)
+    employee_id = models.AutoField(primary_key=True, validators=[MaxValueValidator(999), MinValueValidator(1)])
+    # employee_id = models.IntegerField(unique=True, validators=[MaxValueValidator(999), MinValueValidator(1)], primary_key=True)
     lastname = models.CharField(max_length=25, null=False, blank=False)
     firstname = models.CharField(max_length=25, null=False, blank=False)
     street_address = models.CharField(max_length=50, null=False, blank=False)
