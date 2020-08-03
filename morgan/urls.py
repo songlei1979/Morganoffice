@@ -3,8 +3,8 @@ from .api import DepartmentViewSet, EmployeeViewSet, ProjectViewSet, AssignmentV
 
 router = routers.DefaultRouter()
 router.register('api/departments', DepartmentViewSet,'Departments')
-router.register('api/branches', EmployeeViewSet,'Employees')
-router.register('api/verifies', ProjectViewSet,'Projects')
+router.register('api/employees', EmployeeViewSet,'Employees')
+router.register('api/projects', ProjectViewSet,'Projects')
 router.register('api/assignments', AssignmentViewSet,'Assignments')
 
 
