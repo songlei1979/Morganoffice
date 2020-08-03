@@ -28,8 +28,8 @@ class Employee(models.Model):
     lastname = models.CharField(max_length=25, null=False, blank=False)
     firstname = models.CharField(max_length=25, null=False, blank=False)
     street_address = models.CharField(max_length=50, null=False, blank=False)
-    phone = models.CharField(max_length=15, null=True, blank=False)
     suburb = models.CharField(max_length=15, null=False, blank=False)
+    phone = models.CharField(max_length=15, null=True, blank=False)
     hourly_rate = models.FloatField(validators=[MaxValueValidator(75.00), MinValueValidator(10.00)], null=False, blank=False)
     department = models.ForeignKey(Department, on_delete=models.CASCADE, to_field='department_id', null=True)
 
